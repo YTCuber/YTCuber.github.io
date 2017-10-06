@@ -1,8 +1,9 @@
+<button onclick="scrambleclock(4);">4</button>
+<button onclick="scrambleclock(5);">5</button>
+<button onclick="scrambleclock(6);">6</button>
+<button onclick="scrambleclock(7);">7</button>
+
 <div id="lol"></div>
-<button onlick="scrambleclock(4);">4</button>
-<button onlick="scrambleclock(5);">5</button>
-<button onlick="scrambleclock(6);">6</button>
-<button onlick="scrambleclock(7);">7</button>
 <script>function rn(n) {
   return ~~(Math.random() * n);
 }
@@ -20,7 +21,7 @@ function pins(n){
 }
 
 function turn(){
-  return "u="+(rn(11)+1)+",d="+(rn(12)+1);
+  return "u="+(rn(11)+1)+",d="+(rn(11)+1);
 }
 
 function scrambleclock(n){
