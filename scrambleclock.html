@@ -1,0 +1,35 @@
+<div id="lol"></div>
+<button onlick="scrambleclock(4);">4</button>
+<button onlick="scrambleclock(5);">5</button>
+<button onlick="scrambleclock(6);">6</button>
+<button onlick="scrambleclock(7);">7</button>
+<script>function rn(n) {
+  return ~~(Math.random() * n);
+}
+
+function pins(n){
+  var code="";
+  for(var j=0;j<n-1;++j)
+    code+=rn(2)==0?"U":"u";
+  for(var i=1;i<n-2;++i)
+    for(var j=0;j<n-1;++j)
+      code+=rn(2)==0?"M"+i:"m"+i;
+  for(var j=0;j<n-1;++j)
+    code+=rn(2)==0?"D":"d";
+  return code;
+}
+
+function turn(){
+  return "u="+(rn(11)+1)+",d="+(rn(12)+1);
+}
+
+function scrambleclock(n){
+  var code="";
+  for(var i=0;i<20;++i){
+    code+=pins(n);
+    code+="<br/>";
+    code+=turn();
+    code+="<br/>";
+  }
+  document.getElementById("lol").innerHTML=code;
+}</script>
